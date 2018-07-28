@@ -39,7 +39,10 @@ wget --no-check-certificate https://raw.githubusercontent.com/googlehosts/hosts/
 
 cd /etc/storage/dnsmasq/dns
 echo "--- 下载AD hosts规则"
-wget --no-check-certificate https://hosts.nfz.moe/127.0.0.1/full/hosts -O hosts
+wget --no-check-certificate https://hosts.nfz.moe/127.0.0.1/full/hosts -O neo.hosts
+wget --no-check-certificate https://raw.githubusercontent.com/kotoyuuko/padavan-hosts/master/tiktok.hosts -O tiktok.hosts
+
+cat neo.hosts tiktok.hosts > hosts
 
 restart_dhcpd
 echo "完成，dnsmasq已生效"
